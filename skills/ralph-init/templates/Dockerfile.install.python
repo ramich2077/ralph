@@ -1,0 +1,3 @@
+# ---- Language Runtime (from multi-stage) ----
+COPY --from=python-runtime /usr/local /usr/local
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
