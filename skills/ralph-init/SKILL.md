@@ -62,7 +62,11 @@ Ask with lettered options for quick answers (e.g. "1A, 2C, 3B, 4A"):
 Read `templates/ralph.sh` → write to project root. Make executable (`chmod +x`).
 
 ### 3.2 `CLAUDE.md`
-Read `templates/CLAUDE.md` → replace ALL `<FILL IN ...>` placeholders in `## Project-Specific` with actual values from the user's answers. Parse quality commands (Q2) into separate build, lint, and test entries. Write to project root.
+Read `templates/CLAUDE.md` → replace ALL `<FILL IN ...>` placeholders in `## Project-Specific` with actual values from the user's answers. Parse quality commands (Q2) into separate build, lint, and test entries.
+
+**Language conventions:** If `templates/CLAUDE.conventions.<lang>.md` exists for the chosen language (e.g. `python`), read it and append its contents after the `### Conventions` section. This adds language-specific rules (package management, code style, etc.).
+
+Write to project root.
 
 ### 3.3 `.git/hooks/post-commit`
 Read `templates/post-commit` → write to `.git/hooks/post-commit`. Make executable (`chmod +x`). If hook already exists, warn user and ask before overwriting.
